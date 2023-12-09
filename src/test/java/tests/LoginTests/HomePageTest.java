@@ -1,10 +1,9 @@
-package LoginTests;
+package tests.LoginTests;
 
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import tests.BaseTest;
 
-public class HomePageTest {
+public class HomePageTest extends BaseTest {
 
     @Test
     public void validateHomePageTitleAndLogo(){
