@@ -10,7 +10,7 @@ import org.testng.annotations.BeforeSuite;
 import java.net.MalformedURLException;
 
 public class BaseTest extends BaseDriver {
-    AndroidDriver driver;
+    protected AndroidDriver driver;
 
     @BeforeSuite
     public void initSuite(){
