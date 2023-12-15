@@ -15,11 +15,11 @@ public class LaunchPage extends BasePage {
     By skipSignInBtnId= By.id("com.amazon.mShop.android.shopping:id/skip_sign_in_button");
 
     public void allowNotifications(){
-        driver.findElement(allowNotificationBtnId).click();
+        waitAndClick(allowNotificationBtnId);
     }
 
     public void skipSignIn(){
-        driver.findElement(skipSignInBtnId).click();
+        waitAndClick(skipSignInBtnId);
     }
 
 

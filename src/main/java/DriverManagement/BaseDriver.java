@@ -17,7 +17,6 @@ public class BaseDriver {
 
     public AndroidDriver initAndroidDriver() throws MalformedURLException {
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), getDesiredCapabilities());
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         return driver;
     }
 
