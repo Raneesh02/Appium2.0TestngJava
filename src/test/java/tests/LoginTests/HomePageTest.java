@@ -1,17 +1,18 @@
 package tests.LoginTests;
 
-import Pages.LaunchPage;
+import Pages.pageFactory.HomePage;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import tests.BaseTest;
 
 public class HomePageTest extends BaseTest {
 
     @Test
-    public void validateHomePageTitleAndLogo() throws InterruptedException {
+    public void validateSearchAutoComplete()  {
         System.out.println("ValidateHomePageTitleAndLogo Test case started");
-        LaunchPage launchPage=new LaunchPage(this.driver);
-        launchPage.allowNotifications();
-        launchPage.skipSignIn();
+        HomePage homePage = pageFactory.getLaunchPage();
+        homePage.searchForProduct("neck band");
+        Assert.assertTrue(homePage.isAutoCompleteListDisplayed(),"Autocomplete list is not displayed");
     }
 
     @Test
