@@ -1,5 +1,6 @@
 package Pages.pageFactory;
 
+import Pages.android.AndroidProfileLoggedOutPagePage;
 import Pages.baseclasses.BasePage;
 import io.appium.java_client.AppiumDriver;
 
@@ -16,4 +17,5 @@ public abstract class HomePage extends BasePage {
 
     public abstract boolean isAutoCompleteListDisplayed();
 
+    public abstract AndroidProfileLoggedOutPagePage goToUserProfile();
 }

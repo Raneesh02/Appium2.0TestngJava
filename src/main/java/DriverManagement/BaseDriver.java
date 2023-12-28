@@ -6,6 +6,7 @@ import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.File;
@@ -54,10 +55,13 @@ public class BaseDriver {
         capabilities.setCapability("platformVersion", prop.getProperty("platformVersion"));
 
         if(platform.equals(ANDROID)) {
-            capabilities.setCapability("platformVersion", "14");
             capabilities.setCapability("automationName", "UIAutomator2");
             capabilities.setCapability("platformName", "Android");
-            capabilities.setCapability("app", System.getProperty("user.dir") + "/src/main/resources/App/amazon-shopping-26-18-4-100.apk");
+            //Use below capabilities when app is already installed
+            capabilities.setCapability("appPackage","in.amazon.mShop.android.shopping");
+            capabilities.setCapability("appActivity","com.amazon.mShop.home.HomeActivity");
+            //use below in case app needs to be installed
+            //capabilities.setCapability("app", System.getProperty("user.dir") + "/src/main/resources/App/amazon-shopping-26-18-4-100.apk");
         }
         else if(platform.equals(IOS)){
             capabilities.setCapability("automationName", "xcuitest");

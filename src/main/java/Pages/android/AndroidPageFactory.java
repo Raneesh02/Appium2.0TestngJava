@@ -12,7 +12,7 @@ public class AndroidPageFactory extends PageFactory {
     }
 
     @Override
-    public AndroidHomePage getLaunchPage() {
+    public AndroidHomePage getHomePage() {
         return new AndroidHomePage(driver);
     }
 }

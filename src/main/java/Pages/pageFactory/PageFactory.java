@@ -20,6 +20,6 @@ public abstract class PageFactory {
         };
     }
 
-    public  abstract HomePage getLaunchPage();
+    public  abstract HomePage getHomePage();
 
 }

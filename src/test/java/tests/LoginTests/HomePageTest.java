@@ -10,7 +10,7 @@ public class HomePageTest extends BaseTest {
     @Test
     public void validateSearchAutoComplete()  {
         System.out.println("ValidateHomePageTitleAndLogo Test case started");
-        HomePage homePage = pageFactory.getLaunchPage();
+        HomePage homePage = pageFactory.getHomePage();
         homePage.searchForProduct("neck band");
         Assert.assertTrue(homePage.isAutoCompleteListDisplayed(),"Autocomplete list is not displayed");
     }
