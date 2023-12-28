@@ -1,6 +1,7 @@
 package Pages.android;
 
 import Pages.pageFactory.HomePage;
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 
@@ -12,16 +13,28 @@ public class AndroidHomePage extends HomePage {
     }
 
     By allowNotificationBtnId= By.id("com.android.permissioncontroller:id/permission_allow_button");
-    By skipSignInBtnId= By.id("com.amazon.mShop.android.shopping:id/skip_sign_in_button");
-    By searchHintBarId= By.id("com.amazon.mShop.android.shopping:id/chrome_search_hint_view");
-    By searchBarTxtId= By.id("com.amazon.mShop.android.shopping:id/rs_search_src_text");
-    By autocompleteListId= By.id("com.amazon.mShop.android.shopping:id/search_suggestions_frame_layout");
+    By skipSignInBtnId= By.id("in.amazon.mShop.android.shopping:id/skip_sign_in_button");
+    By searchHintBarId= By.id("in.amazon.mShop.android.shopping:id/chrome_search_hint_view");
+    By searchBarTxtId= By.id("in.amazon.mShop.android.shopping:id/rs_search_src_text");
+    By autocompleteListId= By.id("in.amazon.mShop.android.shopping:id/search_suggestions_frame_layout");
+    By bottomNavBarProfileId=By.xpath("(//android.widget.ImageView[@resource-id=\"in.amazon.mShop.android.shopping:id/bottom_tab_button_icon\"])[2]");
+
+    By englishLangOptionId = AppiumBy.accessibilityId("Select English");
+    By continueBtnId=By.id("in.amazon.mShop.android.shopping:id/continue_button");
 
 
     public void allowNotifications(){
         if(isDisplayed(allowNotificationBtnId)) {
             waitAndClick(allowNotificationBtnId);
         }
+    }
+
+    public void selectLanguage(){
+        if(isDisplayed(englishLangOptionId)) {
+            waitAndClick(englishLangOptionId);
+            waitAndClick(continueBtnId);
+        }
+
     }
 
     public void skipSignIn(){
@@ -33,6 +46,7 @@ public class AndroidHomePage extends HomePage {
     @Override
     public void skipPopupsIfAny(){
         allowNotifications();
+        selectLanguage();
         skipSignIn();
     }
 
@@ -45,6 +59,12 @@ public class AndroidHomePage extends HomePage {
     @Override
     public boolean isAutoCompleteListDisplayed() {
         return isDisplayed(autocompleteListId);
+    }
+
+    @Override
+    public AndroidProfileLoggedOutPagePage goToUserProfile(){
+        waitAndClick(bottomNavBarProfileId);
+        return new AndroidProfileLoggedOutPagePage(this.driver);
     }
 
 }

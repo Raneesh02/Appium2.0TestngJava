@@ -12,7 +12,7 @@ public class IOSPageFactory extends PageFactory {
     }
 
     @Override
-    public IOSHomePage getLaunchPage() {
+    public IOSHomePage getHomePage() {
     return  new IOSHomePage(driver);
     }
 }
