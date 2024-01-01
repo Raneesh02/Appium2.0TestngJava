@@ -19,5 +19,5 @@ public abstract class SearchResultsPage extends BasePage {
 
     public abstract ProductDetailPage goToProductDetail(String search);
 
-    public abstract void doActions();
+
 }

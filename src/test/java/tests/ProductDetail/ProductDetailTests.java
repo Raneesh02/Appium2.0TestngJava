@@ -1,6 +1,7 @@
 package tests.ProductDetail;
 
 import Pages.pageFactory.HomePage;
+import Pages.pageFactory.ProductDetailPage;
 import Pages.pageFactory.SearchResultsPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -14,8 +15,8 @@ public class ProductDetailTests  extends BaseTest {
         homePage.searchForProduct("neck band");
         Assert.assertTrue(homePage.isAutoCompleteListDisplayed(),"Autocomplete list is not displayed");
         SearchResultsPage searchResultsPage = homePage.selectAutoCompleteOption(1);
-        searchResultsPage.goToProductDetail("Neckband");
-        searchResultsPage.doActions();
+        ProductDetailPage productDetailPage = searchResultsPage.goToProductDetail("Neckband");
+        productDetailPage.doActions();
 
     }
 }

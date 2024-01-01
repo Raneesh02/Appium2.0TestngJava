@@ -10,4 +10,6 @@ public abstract class ProductDetailPage extends BasePage {
         super(driver);
     }
 
+    public abstract void doActions();
+
 }
