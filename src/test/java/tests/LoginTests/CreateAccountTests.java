@@ -15,7 +15,7 @@ public class CreateAccountTests extends BaseTest {
     public void testRegisterUserForm(){
         System.out.println("testRegisterUserForm Test case started");
         HomePage homePage = pageFactory.getHomePage();
-        ProfilePageLoggedOutPage profilePageLoggedOutPage= homePage.selectBottomBarOption("You");
+        ProfilePageLoggedOutPage profilePageLoggedOutPage= homePage.goToUserProfile();
         CreateAccountPage createAccountPage= profilePageLoggedOutPage.goToCreateAccount();
 
         HashMap<String,String> formMap=new HashMap<>();

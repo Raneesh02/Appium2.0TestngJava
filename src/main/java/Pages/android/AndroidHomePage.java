@@ -3,7 +3,13 @@ package Pages.android;
 import Pages.pageFactory.HomePage;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 public class AndroidHomePage extends HomePage {
 
@@ -21,6 +27,7 @@ public class AndroidHomePage extends HomePage {
 
     By englishLangOptionId = AppiumBy.accessibilityId("Select English");
     By continueBtnId=By.id("in.amazon.mShop.android.shopping:id/continue_button");
+    By buttonClassName=By.className("android.widget.Button");
 
 
     public void allowNotifications(){
@@ -66,5 +73,15 @@ public class AndroidHomePage extends HomePage {
         waitAndClick(bottomNavBarProfileId);
         return new AndroidProfileLoggedOutPagePage(this.driver);
     }
+
+    @Override
+    public AndroidSearchResultsPage selectAutoCompleteOption(int index){
+        WebElement searchListElem = waitForVisible(autocompleteListId);
+        List<WebElement> autoCompleteElements = searchListElem.findElements(buttonClassName);
+        autoCompleteElements.get(2*(index-1)).click();
+        ((AndroidDriver)driver).pressKey(new KeyEvent(AndroidKey.ENTER));
+        return new AndroidSearchResultsPage(driver);
+    }
+
 
 }

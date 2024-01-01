@@ -2,7 +2,7 @@ package Pages.ios;
 
 import Pages.android.AndroidProfileLoggedOutPagePage;
 import Pages.pageFactory.HomePage;
-import Pages.pageFactory.ProfilePageLoggedOutPage;
+import Pages.pageFactory.SearchResultsPage;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 
@@ -25,6 +25,11 @@ public class IOSHomePage extends HomePage {
 
     @Override
     public AndroidProfileLoggedOutPagePage goToUserProfile() {
+        return null;
+    }
+
+    @Override
+    public SearchResultsPage selectAutoCompleteOption(int index) {
         return null;
     }
 
