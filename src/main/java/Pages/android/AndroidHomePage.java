@@ -69,9 +69,9 @@ public class AndroidHomePage extends HomePage {
     }
 
     @Override
-    public AndroidProfileLoggedOutPagePage goToUserProfile(){
+    public AndroidProfileLoggedOutPage goToUserProfile(){
         waitAndClick(bottomNavBarProfileId);
-        return new AndroidProfileLoggedOutPagePage(this.driver);
+        return new AndroidProfileLoggedOutPage(this.driver);
     }
 
     @Override
