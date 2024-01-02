@@ -1,17 +1,16 @@
 package Pages.android;
 
-import Pages.pageFactory.ProfilePageLoggedOutPage;
+import Pages.pageFactory.ProfileLoggedOutPage;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 
-public class AndroidProfileLoggedOutPagePage extends ProfilePageLoggedOutPage {
+public class AndroidProfileLoggedOutPage extends ProfileLoggedOutPage {
 
-    public AndroidProfileLoggedOutPagePage(AppiumDriver driver) {
+    public AndroidProfileLoggedOutPage(AppiumDriver driver) {
         super(driver);
     }
 
-    By createAccountBtnId= AppiumBy.accessibilityId("cab");
 
 
     @Override

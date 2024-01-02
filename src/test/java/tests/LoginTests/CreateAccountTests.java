@@ -2,7 +2,7 @@ package tests.LoginTests;
 
 import Pages.pageFactory.CreateAccountPage;
 import Pages.pageFactory.HomePage;
-import Pages.pageFactory.ProfilePageLoggedOutPage;
+import Pages.pageFactory.ProfileLoggedOutPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import tests.BaseTest;
@@ -15,8 +15,8 @@ public class CreateAccountTests extends BaseTest {
     public void testRegisterUserForm(){
         System.out.println("testRegisterUserForm Test case started");
         HomePage homePage = pageFactory.getHomePage();
-        ProfilePageLoggedOutPage profilePageLoggedOutPage= homePage.goToUserProfile();
-        CreateAccountPage createAccountPage= profilePageLoggedOutPage.goToCreateAccount();
+        ProfileLoggedOutPage profileLoggedOutPage = homePage.goToUserProfile();
+        CreateAccountPage createAccountPage= profileLoggedOutPage.goToCreateAccount();
 
         HashMap<String,String> formMap=new HashMap<>();
         formMap.put("email","123newemail12@gmail.com");

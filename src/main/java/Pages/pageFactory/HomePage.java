@@ -16,7 +16,7 @@ public abstract class HomePage extends BasePage {
 
     public abstract boolean isAutoCompleteListDisplayed();
 
-    public abstract ProfilePageLoggedOutPage goToUserProfile();
+    public abstract ProfileLoggedOutPage goToUserProfile();
 
     public abstract SearchResultsPage selectAutoCompleteOption(int index);
 }
