@@ -67,7 +67,10 @@ public class BaseDriver {
             capabilities.setCapability("automationName", "xcuitest");
             capabilities.setCapability("platformName", "iOS");
             capabilities.setCapability("udid","00008030-000128680A04C02E");
-            capabilities.setCapability("bundleId","com.amazon.Amazon");
+            //for amazon app
+            //capabilities.setCapability("bundleId","com.amazon.Amazon");
+            //for settings app
+            capabilities.setCapability("bundleId","com.apple.Preferences");
         }
         else{
             throw new IllegalArgumentException("Platform "+platform+" is not a valid value");
