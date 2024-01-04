@@ -1,5 +1,6 @@
 package Pages.pageFactory;
 
+import Pages.mobileweb.MobileWebPageFactory;
 import Pages.android.AndroidPageFactory;
 import Pages.ios.IOSPageFactory;
 import io.appium.java_client.AppiumDriver;
@@ -16,6 +17,7 @@ public abstract class PageFactory {
         return switch (platform) {
             case "android" -> new AndroidPageFactory(driver);
             case "ios" -> new IOSPageFactory(driver);
+            case "android_chrome" -> new MobileWebPageFactory(driver);
             default -> throw new IllegalArgumentException("Platform " + platform + "is not correct value");
         };
     }
