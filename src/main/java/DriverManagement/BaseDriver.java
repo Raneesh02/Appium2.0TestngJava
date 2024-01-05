@@ -1,13 +1,13 @@
 package DriverManagement;
 
 import Pages.mobileweb.ChromeElements;
-import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
+import org.codehaus.plexus.util.StringUtils;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.File;
@@ -45,10 +45,15 @@ public class BaseDriver {
     }
 
     private void initAndroidChrome(AppiumDriver driver){
+        if(StringUtils.isEmpty(prop.getProperty("browserName"))) {
         ChromeElements chromeElements=new ChromeElements(driver);
         chromeElements.handleChromeStartup();
+        }
         driver.get(prop.getProperty("weburl"));
+        driver.navigate().refresh();
+        if(StringUtils.isEmpty(prop.getProperty("browserName"))) {
         ((AndroidDriver) driver).context("WEBVIEW_chrome");
+        }
     }
 
     public void loadPropertyFile() throws IOException {
@@ -87,11 +92,18 @@ public class BaseDriver {
             case ANDROID_CHROME:
                 capabilities.setCapability("automationName","UIAutomator2");
                 capabilities.setCapability("platformName","Android");
-                //capability for chrome
-                capabilities.setCapability("appPackage","com.android.chrome");
-                capabilities.setCapability("appActivity","com.google.android.apps.chrome.Main");
-                //ENable below to turn off w3c standards to use locator strategy other than xpath and css
-//                capabilities.setCapability("appium:chromeOptions", ImmutableMap.of("w3c", false));
+                String browserName=prop.getProperty("browserName");
+                if(!StringUtils.isEmpty(browserName)) {
+                    capabilities.setCapability("browserName",browserName);
+                }
+                else{
+                    //capability for chrome app
+                    capabilities.setCapability("appPackage","com.android.chrome");
+                    capabilities.setCapability("appActivity","com.google.android.apps.chrome.Main");
+                }
+
+                //Enable below to turn off w3c standards to use locator strategy other than xpath and css
+                //capabilities.setCapability("appium:chromeOptions", ImmutableMap.of("w3c", false));
             break;
             default: throw new IllegalArgumentException("Wrong Platform Name"+platform);
         }

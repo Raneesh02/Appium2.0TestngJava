@@ -13,8 +13,12 @@ public class ChromeElements extends BasePage {
     By noThanksBtnId=By.id("com.android.chrome:id/negative_button");
 
     public void handleChromeStartup(){
-        waitAndClick(useWithoutAcntBtnId);
-        waitAndClick(noThanksBtnId);
+        if(isDisplayed(useWithoutAcntBtnId)) {
+            waitAndClick(useWithoutAcntBtnId);
+        }
+        if(isDisplayed(noThanksBtnId)) {
+            waitAndClick(noThanksBtnId);
+        }
     }
 
 }
