@@ -120,8 +120,8 @@ public class BaseDriver {
 //                        .withAppiumJS(new File("/usr/local/lib/node_modules/appium/build/lib/main.js")) //if Appium not added in PATH
                         .withLogFile(new File(System.getProperty("user.dir")+"/target/appiumServiceLogs.txt"))  // Change to the absolute path
                         .withArgument(GeneralServerFlag.LOCAL_TIMEZONE));
-
         appiumService.start();
+        appiumService.clearOutPutStreams();
     }
 
     public void quitDriver(){
