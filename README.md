@@ -1,4 +1,4 @@
-##Intro
+## Introduction
 
 This code base is part of the appium course present here:
 https://www.thetesttribe.com/courses/appium-course/
