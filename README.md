@@ -1,18 +1,18 @@
 ## Introduction
 
-This code base is part of the appium course present here:
+This code base is part of the Appium course present here:
 https://www.thetesttribe.com/courses/appium-course/
 
-## New to Git ?
+## New to Git?
 
-Install Git : https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+Install Git: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
 ```sh
 git clone git@github.com:Raneesh02/Appium2.0TestngJava.git
 ```
 
 
-## Use Intellij or Eclipse ?
+## Use Intellij or Eclipse?
 
 Directly import the project as a maven project
 
@@ -24,11 +24,11 @@ Download Maven https://maven.apache.org/download.cgi
 mvn compile
 ```
 
-If above command is successful then only go forward otherwise do it again
+If the above command is successful then only go forward otherwise do it again
 
 ## Execution
 
-After appium setup is done and emulator / simulator is up and running then run
+After Appium setup is done and emulator/simulator is up and running then run
 
 
 ```sh
@@ -37,4 +37,4 @@ mvn clean test
 
 the tests mentioned in src/test/resources/testngxmls/testsuite.xml will run
 
-Note: Above steps assumes you have watched the course setup sections 
+Note: The above steps assumes you have watched the course setup sections 
