@@ -1,7 +1,8 @@
 ## Introduction
 
 This code base is part of the Appium course present here:
-https://www.thetesttribe.com/courses/appium-course/
+Test Tribe - https://www.thetesttribe.com/courses/appium-course/
+Udemy - https://www.udemy.com/course/kickass-appium-automation-android-ios-with-java/?referralCode=2C0183FBFE5B4E284BDB 
 
 ## New to Git?
 
@@ -24,7 +25,7 @@ Download Maven https://maven.apache.org/download.cgi
 mvn compile
 ```
 
-If the above command is successful then only go forward otherwise do it again
+If the above command is successful, then only go forward otherwise, do it again
 
 ## Execution
 
