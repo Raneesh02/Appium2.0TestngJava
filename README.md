@@ -1,7 +1,9 @@
 ## Introduction
 
 This code base is part of the Appium course present here:
+
 Test Tribe - https://www.thetesttribe.com/courses/appium-course/
+
 Udemy - https://www.udemy.com/course/kickass-appium-automation-android-ios-with-java/?referralCode=2C0183FBFE5B4E284BDB 
 
 ## New to Git?
