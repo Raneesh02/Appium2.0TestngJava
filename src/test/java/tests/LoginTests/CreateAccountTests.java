@@ -23,7 +23,6 @@ public class CreateAccountTests extends BaseTest {
         formMap.put("countryCode","+62");
         formMap.put("phone","7499999999");
         formMap.put("name","Raaj");
-        formMap.put("password","R4aj@pas");
 
         createAccountPage.fillForm(formMap);
         Assert.assertEquals(createAccountPage.getContinueBtnText(),"Verify mobile number");

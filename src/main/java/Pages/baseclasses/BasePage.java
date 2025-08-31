@@ -61,8 +61,8 @@ public class BasePage {
         Point midPoint=new Point(elemRect.x+(elemRect.width/2),elemRect.y+(elemRect.height/2));
         PointerInput finger=new PointerInput(PointerInput.Kind.TOUCH,"finger");
         Sequence swipe=new Sequence(finger,1);
-        int endPointX=0;
-        int endPointY=0;
+        int endPointX=midPoint.getX();
+        int endPointY=midPoint.getY();
 
         switch(direction){
             case LEFT: endPointX=elemRect.x;break;

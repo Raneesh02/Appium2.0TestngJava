@@ -13,7 +13,7 @@ public class AndroidSearchResultsPage extends SearchResultsPage {
         super(driver);
     }
 
-    By filtersXpath=By.xpath("//android.widget.ToggleButton[@resource-id=\"s-all-filters\"]");
+    By filtersXpath=By.xpath("//android.widget.Button[@resource-id=\"s-all-filters-announce\"]");
     String searchResultXpath="//android.view.View[contains(@content-desc,'%s')]";
 
     @Override

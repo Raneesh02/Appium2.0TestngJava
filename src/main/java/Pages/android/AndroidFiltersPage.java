@@ -12,14 +12,16 @@ public class AndroidFiltersPage extends FiltersPage {
     }
 
     By applyFilterXpath=By.xpath("//android.widget.TextView[contains(@text,'Show')]");
-    String filtersListUISel="new UiScrollable(new UiSelector().resourceId(\"sf-filters-vtabs\").childSelector(new UiSelector(). className(\"android.view.View\"))).scrollIntoView(new UiSelector().text(\"%s\"))";
+    String filterOptionXpath= "//android.widget.TextView[@text=\"%s\"]";
+    String filtersListUISel="new UiScrollable(new UiSelector().resourceId(\"sf-filters-vtabs\").childSelector(new UiSelector(). className(\"android.widget.TabWidget\")))" +
+            ".scrollIntoView(new UiSelector().text(\"%s\"))";
 
 
     @Override
     public void setFilter(String filterName, String filterOption){
         String filterOptionSelector=String.format(filtersListUISel,filterName);
         waitAndClick(AppiumBy.androidUIAutomator(filterOptionSelector));
-        waitAndClick(AppiumBy.accessibilityId(filterOption));
+        waitAndClick(AppiumBy.xpath(String.format(filterOptionXpath,filterOption)));
     }
 
     @Override
