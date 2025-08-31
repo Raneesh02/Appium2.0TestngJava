@@ -16,7 +16,7 @@ public class FilterTests extends BaseTest {
         SearchResultsPage searchResultsPage = homePage.selectAutoCompleteOption(1);
 
         FiltersPage filtersPage = searchResultsPage.goToFilters();
-        filtersPage.setFilter("Headphone Style","In Ear");
+        filtersPage.setFilter("Headphones Form Factor","In Ear");
 
         SearchResultsPage searchResultsPage1 = filtersPage.applyFilter();
         Assert.assertTrue(searchResultsPage1.checkFilterApplied("In Ear"),"Filter is not applied");

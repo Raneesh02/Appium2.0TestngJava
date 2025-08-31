@@ -56,8 +56,6 @@ public class AndroidCreateAccountPage extends CreateAccountPage {
         waitAndSendKeys(custNameTxtId,formMap.get("name"));
         selectCountryCode(formMap.get("countryCode"));
         waitAndSendKeys(phoneNumberTxtId,formMap.get("phone"));
-        waitAndSendKeys(pswdTxtId,formMap.get("password"));
-        waitAndClick(this.showPasswordCheckBox);
     }
 
     public void selectCountryCode(String countryCode){
