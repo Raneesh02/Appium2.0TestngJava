@@ -76,7 +76,7 @@ public class BaseDriver {
                 capabilities.setCapability("appium:automationName", "UIAutomator2");
                 capabilities.setCapability("appium:platformName", "Android");
                 //Use below capabilities when app is already installed
-                capabilities.setCapability("appium:appPackage","com.amazon.mShop.android.shopping");
+                capabilities.setCapability("appium:appPackage","in.amazon.mShop.android.shopping");
                 //use below in case app needs to be installed
                 capabilities.setCapability("appium:appActivity","com.amazon.mShop.home.HomeActivity");
 //                capabilities.setCapability("appium:app", System.getProperty("user.dir") + "/src/main/resources/App/amazon-shopping-26-18-4-100.apk");

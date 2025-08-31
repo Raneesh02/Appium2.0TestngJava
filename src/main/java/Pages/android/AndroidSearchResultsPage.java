@@ -14,7 +14,7 @@ public class AndroidSearchResultsPage extends SearchResultsPage {
     }
 
     By filtersXpath=By.xpath("//android.widget.ToggleButton[@resource-id=\"s-all-filters\"]");
-    String searchResultXpath="//android.view.View[contains(@text,'%s')]";
+    String searchResultXpath="//android.view.View[contains(@content-desc,'%s')]";
 
     @Override
     public AndroidFiltersPage goToFilters(){
