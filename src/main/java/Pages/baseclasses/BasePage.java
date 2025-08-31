@@ -61,16 +61,18 @@ public class BasePage {
         Point midPoint=new Point(elemRect.x+(elemRect.width/2),elemRect.y+(elemRect.height/2));
         PointerInput finger=new PointerInput(PointerInput.Kind.TOUCH,"finger");
         Sequence swipe=new Sequence(finger,1);
-        Point endPoint=new Point(midPoint.x,midPoint.y);
+        int endPointX=midPoint.getX();
+        int endPointY=midPoint.getY();
 
         switch(direction){
-            case LEFT: endPoint.x=elemRect.x;break;
-            case RIGHT: endPoint.x=elemRect.x+elemRect.width;break;
-            case UP: endPoint.y=elemRect.y;break;
-            case DOWN: endPoint.y=elemRect.y+elemRect.height;break;
+            case LEFT: endPointX=elemRect.x;break;
+            case RIGHT: endPointX=elemRect.x+elemRect.width;break;
+            case UP: endPointY=elemRect.y;break;
+            case DOWN: endPointY = elemRect.y+elemRect.height;break;
             default:throw new IllegalArgumentException("Direction "+direction+" is not correct");
         }
 
+        Point endPoint=new Point(endPointX,endPointY);
         swipe.addAction(finger.createPointerMove(Duration.ZERO,PointerInput.Origin.viewport(),midPoint));
         swipe.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
         swipe.addAction(finger.createPointerMove(ofMillis(500),PointerInput.Origin.viewport(),endPoint));

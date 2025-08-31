@@ -69,17 +69,17 @@ public class BaseDriver {
     private DesiredCapabilities getDesiredCapabilities(String platform) {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("platformVersion", prop.getProperty("platformVersion"));
+        capabilities.setCapability("appium:platformVersion", prop.getProperty("platformVersion"));
 
         switch (platform){
             case ANDROID:
-                capabilities.setCapability("automationName", "UIAutomator2");
-                capabilities.setCapability("platformName", "Android");
+                capabilities.setCapability("appium:automationName", "UIAutomator2");
+                capabilities.setCapability("appium:platformName", "Android");
                 //Use below capabilities when app is already installed
-                capabilities.setCapability("appPackage","in.amazon.mShop.android.shopping");
-                capabilities.setCapability("appActivity","com.amazon.mShop.home.HomeActivity");
+                capabilities.setCapability("appium:appPackage","in.amazon.mShop.android.shopping");
                 //use below in case app needs to be installed
-                //capabilities.setCapability("app", System.getProperty("user.dir") + "/src/main/resources/App/amazon-shopping-26-18-4-100.apk");
+                capabilities.setCapability("appium:appActivity","com.amazon.mShop.home.HomeActivity");
+//                capabilities.setCapability("appium:app", System.getProperty("user.dir") + "/src/main/resources/App/amazon-shopping-26-18-4-100.apk");
                 break;
             case IOS:
                 capabilities.setCapability("automationName", "xcuitest");
@@ -90,11 +90,11 @@ public class BaseDriver {
                 //for settings app
                 capabilities.setCapability("bundleId","com.apple.Preferences");
             case ANDROID_CHROME:
-                capabilities.setCapability("automationName","UIAutomator2");
-                capabilities.setCapability("platformName","Android");
+                capabilities.setCapability("appium:automationName","UIAutomator2");
+                capabilities.setCapability("appium:platformName","Android");
                 String browserName=prop.getProperty("browserName");
                 if(!StringUtils.isEmpty(browserName)) {
-                    capabilities.setCapability("browserName",browserName);
+                    capabilities.setCapability("appium:browserName",browserName);
                 }
                 else{
                     //capability for chrome app
@@ -109,7 +109,7 @@ public class BaseDriver {
         }
 
 
-        capabilities.setCapability("newCommandTimeout",120);
+        capabilities.setCapability("appium:newCommandTimeout",120);
         return capabilities;
     }
 
